@@ -3,19 +3,15 @@ import React from 'react';
 import { IoMdPlay } from "react-icons/io";
 
 
-const Main = ({ selectedSubCategoryId, selectedCategoryId, dua }) => {
+const Main = ({ selectedSubCategoryId, selectedCategoryId, dua , sectionName}) => {
 
     const filteredDua = dua.filter(item =>
         item.subcat_id === selectedSubCategoryId && item.cat_id === selectedCategoryId
-    );
+);
 
-
-
-    console.log(dua);
-    console.log(filteredDua);
     return (
         <div className='h-[calc(100vh-130px)]  min-w-full'>
-            <h1 className='font-medium py-[17px] rounded-[10px] bg-white  px-7'><span className='text-primary'>Section: </span>The servant is dependent on his Lord</h1>
+            <h1 className='font-medium py-[17px] rounded-[10px] bg-white  px-7'><span className='text-primary'>Section: {sectionName} </span></h1>
 
             <div className='h-[calc(100vh-200px)] overflow-y-auto  rounded-[10px] px-5 lg:px-[30px] py-4 bg-white mt-[10px]'>
                 <div className='space-y-10'>

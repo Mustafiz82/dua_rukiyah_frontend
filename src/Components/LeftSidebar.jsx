@@ -9,11 +9,12 @@ const LeftSidebar = ({
     selectedCategoryId,
     setSelectedCategoryId,
     selectedSubCategoryId,
-    setSelectedSubCategoryId
+    setSelectedSubCategoryId,
+    setSectionName
 }) => {
 
 
-    const handleCategoryClick = (id) => {
+    const handleCategoryClick = (id , section) => {
 
         if (selectedCategoryId === id) {
             setSelectedCategoryId(null);
@@ -21,6 +22,7 @@ const LeftSidebar = ({
         } else {
             setSelectedCategoryId(id);
             setSelectedSubCategoryId(subCategories.find(sub => sub.cat_id === id)?.id);
+            setSectionName(section)
         }
     };
 
@@ -41,7 +43,7 @@ const LeftSidebar = ({
                 {categories?.map((item, idx) => (
                     <div key={idx}>
                         <div
-                            onClick={() => handleCategoryClick(item?.cat_id)}
+                            onClick={() => handleCategoryClick(item?.cat_id , item?.cat_name_en)}
                             className={`p-[10px] m-4 mb-0 rounded-[10px] flex gap-4 ${selectedCategoryId === item?.cat_id ? "bg-[#D1E8F0]" : "bg-[#E8F0F5]"}`}
                         >
                             <Image alt='logo' src={"/images/005-fever.svg"} width={100} height={100} className="w-[60px] p-[10px] h-[60px] rounded-[10px] bg-[#CFE0E5]" />

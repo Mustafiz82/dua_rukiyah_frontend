@@ -14,6 +14,8 @@ const Home = ({ data }) => {
     const [back, setBack] = useState(true)
     const [selectedCategoryId, setSelectedCategoryId] = useState(1);
     const [selectedSubCategoryId, setSelectedSubCategoryId] = useState(1);
+    const [sectionName, setSectionName] = useState(categories[0]?.cat_name_en);
+
 
     const handleToggle = () => {
         setOpenSetting(!openSetting);
@@ -46,6 +48,7 @@ const Home = ({ data }) => {
                                 selectedSubCategoryId={selectedSubCategoryId}
                                 setSelectedCategoryId={setSelectedCategoryId}
                                 selectedCategoryId={selectedCategoryId}
+                                setSectionName={setSectionName}
                             />
                         </div>
                         <div className={back ? "hidden " : "min-w-full block"}>
@@ -53,6 +56,7 @@ const Home = ({ data }) => {
                             dua={dua}
                             selectedCategoryId={selectedCategoryId}
                             selectedSubCategoryId={selectedSubCategoryId}
+                            sectionName={sectionName}
                              />
                         </div>
                     </div>
@@ -65,13 +69,15 @@ const Home = ({ data }) => {
                         selectedSubCategoryId={selectedSubCategoryId}
                         setSelectedCategoryId={setSelectedCategoryId}
                         selectedCategoryId={selectedCategoryId}
+                        setSectionName={setSectionName}
                          />
                     </div>
-                    <div className="hidden lg:block">
+                    <div className="hidden w-full  lg:block">
                         <Main
                         dua={dua} 
                         selectedCategoryId={selectedCategoryId}
                         selectedSubCategoryId={selectedSubCategoryId}
+                        sectionName={sectionName}
                         />
                     </div>
 

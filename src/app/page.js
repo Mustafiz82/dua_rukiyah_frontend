@@ -1,16 +1,17 @@
 import Home from "@/Components/Home";
 
-
 export default async function page() {
-
-  let data;
+  let data = {
+    categories: [],
+    subCategories: [],
+    dua: [],
+  };
 
   try {
-
     const [categoriesData, subCategoriesData, duaData] = await Promise.all([
-      fetch('http://localhost:5000/api/categories'),
-      fetch('http://localhost:5000/api/sub_categories'),
-      fetch('http://localhost:5000/api/dua'),
+      fetch('http://dua-rukiyah-backend.onrender.com/api/categories'),
+      fetch('http://dua-rukiyah-backend.onrender.com/api/sub_categories'),
+      fetch('http://dua-rukiyah-backend.onrender.com/api/dua'),
     ]);
 
     const [categories, subCategories, dua] = await Promise.all([
@@ -20,20 +21,10 @@ export default async function page() {
     ]);
 
     data = { categories, subCategories, dua };
-
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Error fetching data:", error);
+    // Log the error or provide fallback values if needed
   }
 
-
-
-  return (
-    <Home data={data} />
-
-  );
+  return <Home data={data} />;
 }
-
-
-
-
