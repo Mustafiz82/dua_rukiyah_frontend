@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+// tailwind.config.js
+module.exports = {
+  mode: 'jit',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,13 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary:"#1FA45B"
+        primary: "#1FA45B",
       },
-      fontFamily:{
+      fontFamily: {
         poppins: ["var(--font-poppins)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
-        quran: ["var(--font-amiri-quran)", "sans-serif"]
-      }
+        quran: ["var(--font-amiri-quran)", "sans-serif"],
+      },
     },
   },
   plugins: [],
