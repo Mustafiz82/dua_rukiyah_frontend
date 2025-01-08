@@ -10,7 +10,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary:"#1FA45B"
       },
+      fontFamily:{
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
+        quran: ["var(--font-amiri-quran)", "sans-serif"]
+      }
     },
   },
   plugins: [],
